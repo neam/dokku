@@ -56,6 +56,7 @@ $SSL_DIRECTIVES
     proxy_set_header X-Forwarded-Port \$server_port;
     proxy_set_header X-Request-Start \$msec;
   }
+  include $DOKKU_ROOT/$APP/nginx.conf.d/*.conf;
 }
 EOF
 
@@ -79,6 +80,7 @@ server {
     proxy_set_header X-Forwarded-Port \$server_port;
     proxy_set_header X-Request-Start \$msec;
   }
+  include $DOKKU_ROOT/$APP/nginx.conf.d/*.conf;
 }
 EOF
 
